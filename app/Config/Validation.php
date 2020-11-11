@@ -40,4 +40,21 @@ class Validation
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------
+	public $login = [
+		'username' => [
+			'rules' => 'required',
+		],
+		'password' => [
+			'rules' => 'required',
+		],
+	];
+
+	public $login_errors = [
+		'username' => [
+			'required' =>'Username harus diisi'
+		],
+		'password' => [
+			'required' => 'Kata sandi harus diisi',
+		],
+	];
 }
