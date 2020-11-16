@@ -40,7 +40,7 @@ class Auth extends Controller
         {
             $this->session->setFlashdata('errors', $errors);
 
-            return redirect()->to('/');
+            return redirect()->back();
         }
         
         $username = $this->request->getPost('username');
@@ -50,12 +50,18 @@ class Auth extends Controller
 
         if($data)
         {
-            return redirect()->to('/dashboard');
+            if($data['aktif'] == 'Y')
+            {
+                return redirect()->to('/dashboard');
+            } else {
+                $this->session->destroy();
+                $this->session->setFlashdata('errors', ['denied' => 'Akun non-aktif, hubungi pengelola aplikasi']);
+            }
         } else {
             $this->session->setFlashdata('errors', ['denied' => 'Kombinasi username dan kata sandi salah']);
         }
 
-        return redirect()->to('/');
+        return redirect()->back();
     }
 
 

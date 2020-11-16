@@ -34,4 +34,20 @@ class UserModel extends Model
 
         return false;
     }
+
+    public function listuser($id = null)
+    {
+        $data = $this->join('sys_group_users', 'sys_group_users.id = sys_users.id_group')->find($id);
+        
+        return $data;
+    }
+
+    public function store($data)
+    {
+        try {
+            //code...
+        } catch (\Throwable $e) {
+            //throw $th;
+        }
+    }
 }

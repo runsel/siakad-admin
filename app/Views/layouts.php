@@ -8,10 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>SIAKAD - ADMIN</title>
-        <link rel="icon" href="assets/dist/img/siakad-ico.png" type="image/png" sizes="16x16">
-        <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
+        <link rel="icon" href="<?= base_url('assets/dist/img/siakad-ico.png') ?>" type="image/png" sizes="16x16">
+        <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
         <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="<?= base_url('assets/dist/css/adminlte.min.css') ?>">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
         <?= $this->renderSection('css') ?>
@@ -41,9 +41,9 @@
             </footer>
         </div>
 
-        <script src="assets/plugins/jquery/jquery.min.js"></script>
-        <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/dist/js/adminlte.js"></script>
+        <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+        <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+        <script src="<?= base_url('assets/dist/js/adminlte.js') ?>"></script>
 
         <?= $this->renderSection('scripts') ?>
     </body>
