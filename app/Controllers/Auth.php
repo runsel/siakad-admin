@@ -50,18 +50,12 @@ class Auth extends Controller
 
         if($data)
         {
-            if($data['aktif'] == 'Y')
-            {
-                return redirect()->to('/dashboard');
-            } else {
-                $this->session->destroy();
-                $this->session->setFlashdata('errors', ['denied' => 'Akun non-aktif, hubungi pengelola aplikasi']);
-            }
+            return redirect()->to('/dashboard');
         } else {
             $this->session->setFlashdata('errors', ['denied' => 'Kombinasi username dan kata sandi salah']);
         }
 
-        return redirect()->back();
+        return redirect()->to('/');
     }
 
 

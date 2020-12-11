@@ -28,12 +28,16 @@
                 <h3 class="card-title">Filter</h3>
                 </div>
                 <div class="card-body">
+                    <?php foreach ($role as $item) { ?>
+                        <p><?= $item['deskripsi'] ?></p>
+                    <?php } ?>
                 </div>
             </div>
         </div>
         <div class="col-9">
             <div class="card">
                 <div class="card-body">
+                    <?= $this->include('parts/alert') ?>     
                     <table class="table table-hover text-nowrap dtTable">
                         <thead>
                             <tr>
@@ -59,8 +63,8 @@
                                     <td><span class="badge badge-success"><?= $value['aktif'] ?></span></td>
                                     <td>
                                         <div class="btn-group">
-                                            <div class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></div>
-                                            <div class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></div>
+                                            <a href="<?= base_url('pengaturan/pengguna/edit/'.$value['id']) ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
                                         </div>
                                     </td>
                                 </tr>

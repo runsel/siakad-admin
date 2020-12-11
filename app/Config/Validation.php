@@ -43,18 +43,15 @@ class Validation
 	public $login = [
 		'username' => [
 			'rules' => 'required',
+			'errors' => [
+				'required' =>'Username harus diisi'
+			]
 		],
 		'password' => [
 			'rules' => 'required',
-		],
-	];
-
-	public $login_errors = [
-		'username' => [
-			'required' =>'Username harus diisi'
-		],
-		'password' => [
-			'required' => 'Kata sandi harus diisi',
+			'errors' => [
+				'required' => 'Kata sandi harus diisi'
+			]
 		],
 	];
 }
