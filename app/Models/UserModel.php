@@ -4,8 +4,15 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table      = 'sys_users';
-    protected $primaryKey = 'id';
+    protected $table            = 'sys_users';
+    protected $primaryKey       = 'id';
+    protected $useTimestamps    = true;
+    protected $dateFormat       = 'date';
+    protected $createdField     = 'date_created';
+    protected $updatedField     = '';
+    protected $allowedFields    = [
+        'first_name', 'last_name', 'username', 'email', 'id_group', 'kode_jurusan', 'password', 'aktif'
+    ];
 
     public function login($user, $password)
     {
@@ -35,7 +42,7 @@ class UserModel extends Model
         return false;
     }
 
-    public function listuser($id = null)
+    public function get($id = null)
     {
         $data = $this->join('sys_group_users', 'sys_group_users.id = sys_users.id_group')->find($id);
         
@@ -45,9 +52,11 @@ class UserModel extends Model
     public function store($data)
     {
         try {
-            //code...
+            $data = $this->insert($data);
+
+            return $data;
         } catch (\Throwable $e) {
-            //throw $th;
+            throw $e;
         }
     }
 }
