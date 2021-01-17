@@ -25,6 +25,7 @@ class Database extends Config
 	 */
 	public $defaultGroup = 'default';
 
+
 	/**
 	 * The default database connection.
 	 *
@@ -33,9 +34,9 @@ class Database extends Config
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'localhost',
-		'username' => '',
+		'username' => 'root',
 		'password' => '',
-		'database' => '',
+		'database' => 'siakad_admin',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
@@ -85,8 +86,7 @@ class Database extends Config
 		// Ensure that we always set the database group to 'tests' if
 		// we are currently running an automated test suite, so that
 		// we don't overwrite live data on accident.
-		if (ENVIRONMENT === 'testing')
-		{
+		if (ENVIRONMENT === 'testing') {
 			$this->defaultGroup = 'tests';
 		}
 	}
